@@ -3,81 +3,77 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>2 Rows, 2 Columns, A</title>
+		<title>2 Column Layout &mdash; Left Menu with Header &amp; Footer</title>
 		<style type="text/css">
 		
-		body {
-			margin: 0;
-			padding: 0;
-			overflow: hidden;
-			height: 100%; 
-			max-height: 100%; 
-			font-family:Sans-serif;
-			line-height: 1.5em;
-		}
+			body {
+				margin:0;
+				padding:0;
+				font-family: Sans-Serif;
+				line-height: 1.5em;
+			}
+			
+			#header {
+				background: #ccc;
+				height: 100px;
+			}
+			
+			#header h1 {
+				margin: 0;
+				padding-top: 15px;
+			}
+			
+			main {
+				padding-bottom: 10010px;
+				margin-bottom: -10000px;
+				float: left;
+				width: 100%;
+			}
+			
+			#nav {
+				padding-bottom: 10010px;
+				margin-bottom: -10000px;
+				float: left;
+				width: 230px;
+				margin-left: -100%;
+				background: #eee;
+			}
+			
+			#footer {
+				clear: left;
+				width: 100%;
+				background: #ccc;
+				text-align: center;
+				padding: 4px 0;
+			}
+	
+			#wrapper {
+				overflow: hidden;
+			}
+						
+			#content {
+				margin-left: 230px; /* Same as 'nav' width */
+			}
+			
+			.innertube {
+				margin: 15px; /* Padding for content */
+				margin-top: 0;
+			}
 		
-		#header {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100px; 
-			overflow: hidden; /* Disables scrollbars on the header frame. To enable scrollbars, change "hidden" to "scroll" */
-			background: #BCCE98;
-		}
-		
-		#nav {
-			position: absolute; 
-			top: 100px; 
-			left: 0; 
-			bottom: 0;
-			width: 230px;
-			overflow: auto; /* Scrollbars will appear on this frame only when there's enough content to require scrolling. To disable scrollbars, change to "hidden", or use "scroll" to enable permanent scrollbars */
-			background: #DAE9BC; 		
-		}
-		
-		#logo {
-			padding:10px;
-		}
-		
-		main {
-			position: fixed;
-			top: 100px; /* Set this to the height of the header */
-			left: 230px; 
-			right: 0;
-			bottom: 0;
-			overflow: auto; 
-			background: #fff;
-		}
-		
-		.innertube {
-			margin: 15px; /* Provides padding for the content */
-		}
-		
-		p {
-			color: #555;
-		}
-
-		nav ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-		}
-		
-		nav ul a {
-			color: darkgreen;
-			text-decoration: none;
-		}
-				
-		/*IE6 fix*/
-		* html body{
-			padding: 100px 0 0 230px; /* Set the first value to the height of the header and last value to the width of the nav */
-		}
-		
-		* html main{ 
-			height: 100%; 
-			width: 100%; 
-		}
+			p {
+				color: #555;
+			}
+	
+			nav ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			
+			nav ul a {
+				color: darkgreen;
+				text-decoration: none;
+			}
 		
 		</style>
 		
@@ -98,47 +94,58 @@
 	<body>		
 
 		<header id="header">
-			<div id="logo">
-				<h1>CoolLogo</h1>
+			<div class="innertube">
+				<h1>Header...</h1>
 			</div>
 		</header>
-				
-		<main>
+		
+		<div id="wrapper">
+		
+			<main>
+				<div id="content">
+					<div class="innertube">
+						<h1>Heading</h1>
+						<p><script>generateText(20)</script></p>
+					</div>
+				</div>
+			</main>
+			
+			<nav id="nav">
+				<div class="innertube">
+					<h3>Left heading</h3>
+					<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+						<li><a href="#">Link 5</a></li>
+					</ul>
+					<h3>Left heading</h3>
+					<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+						<li><a href="#">Link 5</a></li>
+					</ul>
+					<h3>Left heading</h3>
+					<ul>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li><a href="#">Link 4</a></li>
+						<li><a href="#">Link 5</a></li>
+					</ul>
+				</div>
+			</nav>
+		
+		</div>
+		
+		<footer id="footer">
 			<div class="innertube">
-				
-				<h1>Heading</h1>
-				<p><script>generateText(300)</script></p>
-				
+				<p>Footer...</p>
 			</div>
-		</main>
-
-		<nav id="nav">
-			<div class="innertube">
-				<h1>Heading</h1>
-				<ul>
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-					<li><a href="#">Link 4</a></li>
-					<li><a href="#">Link 5</a></li>
-				</ul>
-				<h1>Heading</h1>
-				<ul>
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-					<li><a href="#">Link 4</a></li>
-					<li><a href="#">Link 5</a></li>
-				</ul>
-				<h1>Heading</h1>
-				<ul>
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-					<li><a href="#">Link 4</a></li>
-					<li><a href="#">Link 5</a></li>
-				</ul>
-			</div>
-		</nav>	
+		</footer>
+	
 	</body>
 </html>
